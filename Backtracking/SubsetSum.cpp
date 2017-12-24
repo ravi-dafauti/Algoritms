@@ -37,13 +37,13 @@ void subsetRecur(int s[], int size, int index, int curr_sum, int target)
 		return;
 	}
 
-		if (curr_sum +s[index] <= target)
-		{
-			visited[index] = 1;
-			subsetRecur(s, size, index + 1, curr_sum + s[index], target);
-		}
-		visited[index] = 0;
-		subsetRecur(s, size, index + 1, curr_sum, target);
+	if (curr_sum +s[index] <= target)
+	{
+		visited[index] = 1;
+		subsetRecur(s, size, index + 1, curr_sum + s[index], target);
+	}
+	visited[index] = 0;
+	subsetRecur(s, size, index + 1, curr_sum, target);
 }
 void generateSubsets(int s[], int size, int target_sum)
 {
