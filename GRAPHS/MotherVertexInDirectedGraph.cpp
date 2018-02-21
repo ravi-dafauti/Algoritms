@@ -4,6 +4,8 @@
 #include<algorithm>
 using namespace std;
 
+
+//graph represented as adjacency list 
 class Graph
 {
 	int V;
@@ -41,6 +43,8 @@ int Graph::motherVertex()
 {
 	vector<bool> visited(V, false); //construct vector of size V and initialize visited with false
 	int v = 0;
+	/* we do dfs and examine the last finished vertex..
+	   because the mother vertex is the last finished vertex*/
 	for (int i = 0; i < V; i++)
 	{
 		if (visited[i] == false)
@@ -49,10 +53,16 @@ int Graph::motherVertex()
 			v = i;
 		}
 	}
+	
+	// initialise visited with false.
 	fill(visited.begin(), visited.end(), false);
+	
+	// dfs on last finished vertex on DFS
 	DFS(v, visited);
 	vector<bool>::iterator it;
 	bool ismother = true;
+	
+        //check if the last finished vertex in DFS is the mother vertex
 	for (it = visited.begin(); it != visited.end(); it++)
 	{
 		if (*it == false)
