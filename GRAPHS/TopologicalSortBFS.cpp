@@ -1,6 +1,8 @@
-/*topological sorting using dfs
-make usual dfs with modification as instead of printing the vertex push it into a stack after traversal on all its adjacent vertices
-and print the stack.. */
+/* find the indegree of all verices and push all vertices with 0 indegree to queue,
+then pop from queue until not empty and push the poped vertex to output array and 
+for every popped vertex find if there are any adjacent vertex with 0 indegree 
+after removing this vertex and is found push them into queue*/
+
 #include<iostream>
 #include<queue>
 #include<list>
