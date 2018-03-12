@@ -1,0 +1,4 @@
+Three variations of Stock Buy Sell Problem
+1. only one transaction allowed
+2. any number of transactions allowed
+3. at most K transactions allowed(Dynamic Programming)
