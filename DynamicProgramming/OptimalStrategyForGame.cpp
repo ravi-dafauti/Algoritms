@@ -32,12 +32,12 @@ int optimalStrategyOfGame(int arr[], int n)
 			if (arr[i] + table[i + 1][j].second > arr[j] + table[i][j - 1].second)
 			{
 				table[i][j].first = arr[i] + table[i + 1][j].second;
-				table[i][j].second = table[i][j - 1].first;
+				table[i][j].second = table[i + 1][j].first;
 			}
 			else
 			{
 				table[i][j].first = arr[j] + table[i][j - 1].second;
-				table[i][j].second = table[i + 1][j].first;
+				table[i][j].second = table[i][j - 1].first;
 			}
 		}
 	}
